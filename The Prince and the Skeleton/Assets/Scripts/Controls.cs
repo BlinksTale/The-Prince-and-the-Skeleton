@@ -6,6 +6,7 @@ public class Controls : MonoBehaviour {
 	Rigidbody2D rigid;
 	int rockWalls = 0;
 	bool climbingWalls = false;
+	public bool collect = false; //the player has the collectible - true (gonna be accessed by PrinceInteract
 
 	// Use this for initialization
 	void Start () {
@@ -42,6 +43,14 @@ public class Controls : MonoBehaviour {
 				climbingWalls = false;
 				rigid.gravityScale = 1;
 			}
+		}
+	}
+
+	//collision detection for collectible items
+	void OnCollisionEnter2D(Collision2D col){
+		if (col.gameObject.tag == "Collect") {
+			col.gameObject.active= false;
+			collect = true;
 		}
 	}
 
