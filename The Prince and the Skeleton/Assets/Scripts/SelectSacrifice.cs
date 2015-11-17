@@ -5,6 +5,8 @@ public class SelectSacrifice : MonoBehaviour {
 
 	public GameObject OptionA, OptionB;
 	int currentOption = 0;
+	public bool allowChoice = true;
+	bool stopMovement = false;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +17,7 @@ public class SelectSacrifice : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!stopMovement) {
 		if (Input.GetKeyDown(KeyCode.LeftArrow)) {
 			Vector3 pos = OptionA.transform.position;
 			pos.z = this.transform.position.z;
@@ -27,8 +30,13 @@ public class SelectSacrifice : MonoBehaviour {
 			this.transform.position = pos;
 			currentOption = 1;
 		}
+		}
 		if (Input.GetKeyDown(KeyCode.Return) && currentOption != 0) {
-			Application.LoadLevel(Application.loadedLevel + 1);
+			if (allowChoice) {
+				Application.LoadLevel(Application.loadedLevel + 1);
+			} else {
+//				stopMovement = true;
+			}
 		}
 	}
 }

@@ -22,7 +22,7 @@ public class PrinceInteract : MonoBehaviour {
 
 	void Update() {
 		if (_princeInteract == true) {
-			if(Input.GetKeyDown("return")){
+//			if(Input.GetKeyDown("return")){
 				Transform princeVoice = this.gameObject.transform.GetChild (0);
 				if(state ==0){
 					if(_collect == false){
@@ -55,7 +55,7 @@ public class PrinceInteract : MonoBehaviour {
 				}
 
 				
-			}
+//			}
 		}
 	}
 
