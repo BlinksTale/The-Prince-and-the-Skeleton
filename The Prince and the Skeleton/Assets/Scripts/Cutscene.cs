@@ -17,9 +17,15 @@ public class Cutscene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		foreach (Transform t in this.GetComponentsInChildren<Transform>()) {
+			if (t != this.transform) {
+				t.gameObject.SetActive(false);
+			}
+		}
 		source = this.GetComponent<AudioSource>();
 		source.clip = list[0].sound;
 		source.Play();
+		list[0].image.SetActive(true);
 	}
 	
 	// Update is called once per frame
