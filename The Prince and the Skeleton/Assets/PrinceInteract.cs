@@ -2,18 +2,17 @@
 using System.Collections;
 
 public class PrinceInteract : MonoBehaviour {
-	bool _princeInteract = false;
-	bool _water = false;
-	bool _rock = false;
-	bool _flower = false;
-	int state = 0;
+	bool _princeInteract = false; //within Prince talking viscinity - true
+	bool _questReceived = false;
+	bool _collect = false;
+	public int state = 0; //user defined state 0-water, 1-rock, 2-flower
 
 
 	void OnTriggerEnter2D(Collider2D col) {
 		//Check for Player Entering Area of Prince Door
 		if (col.gameObject.tag == "Player") {
 			_princeInteract = true;
-			Debug.Log ("INSIDE PRINCE");
+			_collect = col.gameObject.GetComponent<Controls>().collect; 
 		}
 	}
 
@@ -21,17 +20,49 @@ public class PrinceInteract : MonoBehaviour {
 		_princeInteract = false;
 	}
 
-
-	void update() {
+	void Update() {
 		if (_princeInteract == true) {
 			if(Input.GetKeyDown("return")){
+				Transform princeVoice = this.gameObject.transform.GetChild (0);
 				if(state ==0){
-					Transform princeVoice = this.gameObject.transform.GetChild (0);
-					princeVoice.GetComponent<TextMesh>().text = "Water...";
-				
+					if(_collect == false){
+						princeVoice.GetComponent<TextMesh>().text = "Water...";
+						_questReceived = true;
+					}	
+					else{
+						princeVoice.GetComponent<TextMesh>().text = "Thank you... Who are you?";
+						StartCoroutine("NextLevel");
+					}
 				}
+				if(state ==1){
+					if(_collect == false){
+						princeVoice.GetComponent<TextMesh>().text = "I'm bored...";
+						_questReceived = true;
+					}	
+					else{
+						princeVoice.GetComponent<TextMesh>().text = "Thank you... Here is a drawing.";
+						StartCoroutine("NextLevel");
+					}
+				}
+				if(state ==2){
+					if(_collect == false){
+						princeVoice.GetComponent<TextMesh>().text = "I'm curious of whats outside...";
+						_questReceived = true;
+					}	
+					else{
+						StartCoroutine("NextLevel");;
+					}
+				}
+
 				
 			}
+		}
+	}
+
+	private IEnumerator NextLevel(){
+		while(true){
+			yield return new WaitForSeconds(2f); // wait two seconds
+			Application.LoadLevel(Application.loadedLevel + 1);
 		}
 	}
 }
