@@ -36,8 +36,12 @@ public class SelectSacrifice : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Return) && currentOption != 0) {
 			if (allowChoice) {
 				SacrificeTracker c = sacrificeTracker.GetComponent<SacrificeTracker>();
-				c.sacrificedArm = (currentOption == -1) && (Application.loadedLevelName == "Chapter 1 Choice");
-				c.sacrificedLeg = (currentOption == -1) && (Application.loadedLevelName == "Chapter 2 Choice");
+				if ((currentOption == -1) && (Application.loadedLevelName == "Chapter 1 Choice")) {
+					c.sacrificedArm = true;
+				}
+				if ((currentOption == -1) && (Application.loadedLevelName == "Chapter 2 Choice")) {
+					c.sacrificedLeg = true;
+				}
 				Application.LoadLevel(Application.loadedLevel + 1);
 			} else {
 //				stopMovement = true;

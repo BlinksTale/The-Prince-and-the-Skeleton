@@ -8,6 +8,7 @@ public class Credits : MonoBehaviour {
 	int index = 0;
 	public float delay = 4f;
 	public bool loop = false;
+	public bool holdOnFinal = false;
 
 	// Use this for initialization
 	void Start () {
@@ -32,8 +33,10 @@ public class Credits : MonoBehaviour {
 	void NextCredits() {
 		text.text = credits[index];
 		index++;
-		Invoke("TryNextCredits", delay);
-		Invoke ("HideText", delay*.75f); // so credits disappear on third beat to reappear on fourth
+		if (!holdOnFinal || index != credits.Length) {
+			Invoke("TryNextCredits", delay);
+			Invoke ("HideText", delay*.75f); // so credits disappear on third beat to reappear on fourth
+		}
 	}
 
 	void HideText () {

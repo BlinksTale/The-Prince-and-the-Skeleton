@@ -30,17 +30,21 @@ public class Cutscene : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!source.isPlaying) {
-			position++;
-			if (position < list.Length) {
-				// Update image and start new sound
-				list[position-1].image.SetActive(false);
-				list[position].image.SetActive(true);
-				source.clip = list[position].sound;
-				source.Play();
-			} else {
-				Application.LoadLevel(Application.loadedLevel + 1);
-			}
+		if (!source.isPlaying || Input.GetKeyDown(KeyCode.Space)) {
+			NextPage();
+		}
+	}
+
+	void NextPage() {
+		position++;
+		if (position < list.Length) {
+			// Update image and start new sound
+			list[position-1].image.SetActive(false);
+			list[position].image.SetActive(true);
+			source.clip = list[position].sound;
+			source.Play();
+		} else {
+			Application.LoadLevel(Application.loadedLevel + 1);
 		}
 	}
 }
