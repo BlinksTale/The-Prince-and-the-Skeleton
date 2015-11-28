@@ -7,12 +7,14 @@ public class SelectSacrifice : MonoBehaviour {
 	int currentOption = 0;
 	public bool allowChoice = true;
 	bool stopMovement = false;
+	GameObject sacrificeTracker;
 
 	// Use this for initialization
 	void Start () {
 		Vector3 pos = this.transform.position;
 		pos.x = pos.y = 0f;
 		this.transform.position = pos;
+		sacrificeTracker = GameObject.Find("SacrificeTracker");
 	}
 	
 	// Update is called once per frame
@@ -33,6 +35,9 @@ public class SelectSacrifice : MonoBehaviour {
 		}
 		if (Input.GetKeyDown(KeyCode.Return) && currentOption != 0) {
 			if (allowChoice) {
+				SacrificeTracker c = sacrificeTracker.GetComponent<SacrificeTracker>();
+				c.sacrificedArm = (currentOption == -1) && (Application.loadedLevelName == "Chapter 1 Choice");
+				c.sacrificedLeg = (currentOption == -1) && (Application.loadedLevelName == "Chapter 2 Choice");
 				Application.LoadLevel(Application.loadedLevel + 1);
 			} else {
 //				stopMovement = true;
