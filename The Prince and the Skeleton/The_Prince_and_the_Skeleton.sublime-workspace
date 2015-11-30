@@ -1,0 +1,334 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"anim",
+				"AnimationCurve	AnimationCurve"
+			],
+			[
+				"l",
+				"LinMapFrom01(float outputStart, float outputEnd, float inputValue01)	float"
+			],
+			[
+				"y",
+				"y	float"
+			],
+			[
+				"tran",
+				"translation	float"
+			],
+			[
+				"pos",
+				"localPosition	Vector3 { get; set; }"
+			],
+			[
+				"t",
+				"transform	Transform { get; }"
+			],
+			[
+				"start",
+				"StartCoroutine(IEnumerator routine)	Coroutine"
+			],
+			[
+				"IE",
+				"IEnumerator	IEnumerator"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Assets/Scripts/StartText.cs",
+			"settings":
+			{
+				"buffer_size": 661,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\n\n\nThere was a beautiful prince who lived in a very tall tower. That's the way it was.\n\nTo be more accurate, the tower was made on purpose to house the prince.\n\nWhen the prince was still very young, the prince's father the king and his mother the queen lost their kingdom. When the new king took over the kingdom, the ministers advised the new king that they should lock up the little prince. If he failed to do that, the little prince would surely grow up and seek to avenge his parents the old king and queen.\nThe new king thought this makes sense, so he ordered the finest craftsmen in the kingdom to construct a skyscraping tower for the purpose of imprisoning the little prince.\nThe tower looked odd, and its method of construction was also most peculiar. One of the craftsmen advised the king: \"We should enclose the prince in a huge cage, and then seal the outside with stones one by one. That way, the little prince can watch the light disappear little by little, and the sky disappear little by little as well.\"\n\"This is indeed a splendid idea,\" said the king.\nSo the prince was imprisoned in this very tall tower. There was only a small hole in the tower's middle for the prince to breathe through. Every day, the delivery people would come and bring him food.\nAnd so the prince was kept in this shadowy place removed from the light.\nThis story came to be known to an itinerant skeleton. This skeleton was a traveling poet who starved to death in a remote forest. His spirit hovered around his remains for no one knows how many years. His body became a crackling set of white bones, and in this skeletal form he continued to roam around the world.\nBut he had to be careful to stay out of people's sight. That's why he could only travel at night. He came to this forest and saw the strange tall tower. So he made some inquires of the night owl, and asked him what that thing is.\nThe owl told him the story.\nThe skeleton became very curious. Without hesitation, he marched towards the tall tower. When he reached the bottom of the tower, he shouted in its direction:\n\"Hey! Is anybody here?\"\n\"Yes.\" The prince hadn't heard another person's voice for a long time. He was very weak because the meal delivery people had shirked their duties for quite a few days already. \"May I ask if you are the person who has come to deliver food and drinks to me?\"\n\"I'm just a passer-by.\"\n\"May I trouble you to get me some water?\"\nThe skeleton helped him without hesitation. The little prince drank the water and was very grateful, even though he thought the voice of the person speaking to him sounded very odd and erratic: \"Thank you. May I ask who you are? And why does your voice sound so erratic?\"\nThe skeleton dared not say that he sounded like this because he had no flesh on his body. He only said:\n\"I am a traveling poet.\"\nThe prince was very excited. To a person who had spent a long period alone, being able to talk to someone is very exciting. That night, the skeleton told the prince stories about the countries he had visited. The skeleton had been dead for centuries, so he had visited many places and knew many interesting stories. Very soon, dawn came, and the skeleton had to leave the tower to continue his trip.\n\"Oh, I really wish I could use my legs to travel too. But it has been a pleasure talking to you. Let's hope fate reunites us.\" The little prince's voice sounded very sad.\n\n\nThat voice was the saddest and most beautiful sound the skeleton had ever heard. The skeleton hadn't walked far before he felt a hollowness in his heart. So the skeleton decided he could take a few days' rest from his long travel and stay a while to keep the lonely little prince company.\nIn this way, the skeleton remained. He told stories to the little prince during the day, and sang softly beside the tower during the night.\nThe prince was very curious about this friend. He often asked the skeleton who he is. But the skeleton didn't want the prince to know that he is just a set of bones, so he didn't answer the question.\n\nThe prince was very intelligent. From the skeleton's stories, he learned about the activity of writing and drawing, and he lamented: \"How I wish I could learn to write and draw. Even if I have no contact with the outside world, I can at least depict it\". The skeleton wanted to help the prince fulfill this desire before he departed, so he found a sharp stone and some tree leaves and passed them into the tower. He said, \"I can teach you how to use these tools to write and draw.\"\nAfter a few days, the prince passed a large tree leaf from the hole in the wall, and said: \"Thank you for teaching me how to write and draw. This is a drawing that I have done. It depicts me and you. I don't know what you look like, so this is my imagination of you. I assume that the real you is probably a hundred times more beautiful than this.\"\nThe skeleton was very happy to receive the gift. Even though the drawing did not resemble him in the slightest, the skeleton still put away the drawing very carefully. And then, the skeleton decided to stay a little longer with the prince.\nThe prince learned very quickly, and in short time, mastered many beautiful phrases. The prince also began to use these beautiful words to write beautiful poetry. Although he always gave a sigh after completing a poem about roses:\n\"Oh, it would be such a pleasure to see an actual rose. I can only imagine its appearance and fragrance from what you have described.\"\nSo the skeleton asked the birds for some rose seeds, and started planting the world's beautiful blooming roses.\nThe roses bloomed, and the skeleton cut one off and handed it to the prince, and said: \"This is a rose\". The prince could feel the rose's moist petals and sharp thorns. The feeling was so real that it moved him to tears.\nAfter a while, the prince passes a ring out，he said “I have kept this ring since I have understood things, I want to give it to you today, thank you for all the things you have done for me, and thank you for being there my friend.”\nThe skeleton was overjoyed by the ring, “Stay here with my little prince is the best decision I’ve ever made” he thinks.\n“I’ll cherish this flower forever” ”I’ll cherish the ring forever ” the prince and the skeleton murmured simultaneously.\nIn this way, the prince grew up day by day. Finally, after hearing all the stories the skeleton had to tell, the prince asked the skeleton:\n\" Why must I be confined to this tower, when the world holds so many beautiful things? What have I done to deserve this wretched fate?\"\nThe skeleton expected all along that this day would come. He hesitated, but feeling sympathy towards his new friend, he conceded, and began to tell the prince the story of the fallen kingdom, and the tragic fate of the royal family. The prince learned the identity of his enemy and the decadence of his country. The prince became very angry, and he felt that taking revenge in the way described in the skeleton's stories is something that a real prince ought to do.\n\n",
+			"settings":
+			{
+				"buffer_size": 7013,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "set c",
+		"selected_items":
+		[
+			[
+				"set c",
+				"Set Syntax: Unity C#"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"relo",
+				"OmniSharpSublime: Reload Solution"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jung-hosohn/repos/The-Prince-and-the-Skeleton/The Prince and the Skeleton",
+		"/Users/jung-hosohn/repos/The-Prince-and-the-Skeleton/The Prince and the Skeleton/Assets",
+		"/Users/jung-hosohn/repos/The-Prince-and-the-Skeleton/The Prince and the Skeleton/Assets/Scripts"
+	],
+	"file_history":
+	[
+		"/Users/jung-hosohn/repos/The-Prince-and-the-Skeleton/The Prince and the Skeleton/The Prince and the Skeleton.sln",
+		"/Users/jung-hosohn/repos/The-Prince-and-the-Skeleton/The Prince and the Skeleton/Assets/Scenes/Chapter 1 Gameplay.unity",
+		"/Users/jung-hosohn/TheMeadow/TheMeadow/Assets/__Scripts/MonsterVibrate.cs"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			", ",
+			"Mathf.Sin(timer * _speed) *_amount",
+			"tempPosition",
+			"jumpTime",
+			"_JumpTime",
+			"_tempPosition",
+			"tempPosition",
+			"FormerlySerializedAs",
+			"JumpTime",
+			"_JumpTime",
+			"vibrateOffset",
+			"includeZ",
+			"includeY",
+			"includeX",
+			"isVibrating",
+			"amount",
+			"speed",
+			"isJump",
+			";",
+			"public",
+			"\\ ",
+			"position"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Assets/Scripts/StartText.cs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 661,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7013,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6067,
+								6029
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.variable_get":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "The_Prince_and_the_Skeleton.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"time",
+				"TheMeadow/Assets/__Scripts/Timeline/Timeline.cs"
+			],
+			[
+				"monstv",
+				"TheMeadow/Assets/__Scripts/MonsterVibrate.cs"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
