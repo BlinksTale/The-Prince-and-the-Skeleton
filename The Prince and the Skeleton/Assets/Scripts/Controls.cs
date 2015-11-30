@@ -54,6 +54,7 @@ public class Controls : MonoBehaviour {
 	void Update () {
 		// DELETEME:
 		// Skipping levels
+		rigid.velocity = Vector2.ClampMagnitude(rigid.velocity, 2.5f);
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			Application.LoadLevel(Application.loadedLevel + 1);
 		}
