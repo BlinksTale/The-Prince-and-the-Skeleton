@@ -15,6 +15,12 @@ public class Controls : MonoBehaviour {
 	float fallingTime = 0f;
 	bool tripped = false;
 
+	public bool isFalling {
+		get {
+			return falling;
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 		sacrificeTracker = SacrificeTracker.sacrificeTracker;
@@ -29,19 +35,19 @@ public class Controls : MonoBehaviour {
 		rigid = this.GetComponent<Rigidbody2D>();
 	}
 
-	void RandomFall() {
+	public void ForceFall() {
 		falling = true;
-		Debug.Log ("Random fall!");
+		Debug.Log ("Forced fall!");
 	}
 
-	void RandomTrip() {
+	public void ForceTrip() {
 		tripped = true;
 		if (rigid.velocity.x < 0f) {
 			visuals.transform.eulerAngles = new Vector3(0f,0f,-90f);
 		} else {
 			visuals.transform.eulerAngles = new Vector3(0f,0f, 90f);
 		}
-		Debug.Log ("Random trip!");
+		Debug.Log ("Force trip!");
 		Invoke ("TripRecovery", Random.Range (2f, 4f));
 	}
 
@@ -75,10 +81,10 @@ public class Controls : MonoBehaviour {
 			// Tripping
 			if (sacrificeTracker.sacrificedLeg) {
 				if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)) {
-					Invoke ("RandomTrip", Random.Range(3f, 8f));
+					Invoke ("ForceTrip", Random.Range(3f, 8f));
 				}
 				if (!Input.GetKey (KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && Mathf.Abs (rigid.velocity.x) < .2f) {
-					CancelInvoke("RandomTrip");
+					CancelInvoke("ForceTrip");
 				}
 			}
 
@@ -95,8 +101,8 @@ public class Controls : MonoBehaviour {
 
 					if (sacrificeTracker.sacrificedArm) {
 						float timer = Random.Range(3f, 13f);
-						Debug.Log ("Invoking randomFall in " + timer + " seconds");
-						Invoke("RandomFall", timer);
+						Debug.Log ("Invoking ForceFall in " + timer + " seconds");
+						Invoke("ForceFall", timer);
 					}
 				}
 
@@ -123,7 +129,7 @@ public class Controls : MonoBehaviour {
 			// Stop Falling
 			} else if (fallingTime > .5f && (this.transform.position.y - lastPositionY >= -.01f || rockWalls <= 0)) {
 				falling = false;
-				CancelInvoke("RandomFall");
+				CancelInvoke("ForceFall");
 				fallingTime = 0f;
 			}
 
@@ -131,7 +137,7 @@ public class Controls : MonoBehaviour {
 			if (falling) {
 				fallingTime += Time.deltaTime;
 			}
-			Debug.Log("Rock walls are " + rockWalls + " and pos y - last pos y is " + (this.transform.position.y - lastPositionY));
+//			Debug.Log("Rock walls are " + rockWalls + " and pos y - last pos y is " + (this.transform.position.y - lastPositionY));
 
 		}
 
