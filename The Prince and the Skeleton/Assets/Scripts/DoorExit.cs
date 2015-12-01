@@ -2,15 +2,16 @@
 using System.Collections;
 
 public class DoorExit : MonoBehaviour {
+	public int levelIndex = -1; 
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
 	void OnTriggerEnter2D (Collider2D c) {
-		// On triggered, restart level
-		Debug.Log ("Door triggered with " + c.gameObject.name);
-		Application.LoadLevel(Application.loadedLevel + 1);
+		if(levelIndex == -1){
+			// On triggered, restart level
+			Debug.Log ("Door triggered with " + c.gameObject.name);
+			Application.LoadLevel(Application.loadedLevel + 1);
+		}
+		else {
+			Application.LoadLevel(levelIndex);
+		}
 	}
 }
