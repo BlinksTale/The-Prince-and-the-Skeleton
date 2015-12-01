@@ -20,6 +20,13 @@ public class EnemyAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		//Switch Enemy Facing Direction
+		if(facingLeft){
+			GetComponent<Transform>().localScale = new Vector2(1, 1);
+		}
+		else{
+			GetComponent<Transform>().localScale = new Vector2(-1, 1);
+		}
 		if (!turning) {
 			if (facingLeft && this.transform.position.x > edgeLeft) {
 				this.GetComponent<Rigidbody2D>().AddForce(new Vector2(-speed, 0f));

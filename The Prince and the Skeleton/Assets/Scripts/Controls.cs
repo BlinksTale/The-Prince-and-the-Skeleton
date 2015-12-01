@@ -52,9 +52,12 @@ public class Controls : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		// DELETEME:
+		// DELETEME:	
 		// Skipping levels
-		rigid.velocity = Vector2.ClampMagnitude(rigid.velocity, 2.5f);
+		Vector2 v = rigid.velocity;
+		v.x = Mathf.Clamp(v.x,-2.5f,2.5f);
+		rigid.velocity = v;
+		//rigid.velocity = Vector2.ClampMagnitude(rigid.velocity, 2.5f);
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			Application.LoadLevel(Application.loadedLevel + 1);
 		}
