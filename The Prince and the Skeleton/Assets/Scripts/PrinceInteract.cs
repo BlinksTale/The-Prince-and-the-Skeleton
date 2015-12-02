@@ -7,7 +7,7 @@ public class PrinceInteract : MonoBehaviour {
 	bool _collect = false;
 	public int state = 0; //user defined state 0-water, 1-rock, 2-flower
 
-
+	//void getScores() { state = PlayerPrefs.GetInt("collectState"); } 
 	void OnTriggerEnter2D(Collider2D col) {
 		//Check for Player Entering Area of Prince Door
 		if (col.gameObject.tag == "Player") {
@@ -22,6 +22,8 @@ public class PrinceInteract : MonoBehaviour {
 
 	void Update() {
 		if (_princeInteract == true) {
+			//getScores();
+			//Debug.Log(state);
 //			if(Input.GetKeyDown("return")){
 				Transform princeVoice = this.gameObject.transform.GetChild (0);
 				if(state ==0){
