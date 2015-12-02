@@ -31,7 +31,7 @@ public class AudioWait : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (!source.isPlaying) {
+		if (source != null && !source.isPlaying) {
             hideObject();
             showObject();
         }
