@@ -47,12 +47,12 @@ public class Cutscene : MonoBehaviour {
 			source.clip = list[position].sound;
 			source.Play();
 		} else {
-            // if(levelIndex == -1){
-            //     Application.LoadLevel(Application.loadedLevel + 1);
-            // }
-            // else {
+             if(levelIndex == -1){
+                 Application.LoadLevel(Application.loadedLevel + 1);
+             }
+             else {
                 Application.LoadLevel(levelIndex);
-          //  }
+            }
 		}
 	}
 }

@@ -23,8 +23,10 @@ public class TriggerChoice : MonoBehaviour {
 			}
 		}
 		source = this.GetComponent<AudioSource>();
-		source.clip = list[0].sound;
-		source.Play();
+		if (list.Length > 0) {
+			source.clip = list[0].sound;
+			source.Play();
+		}
 	}
 	
 	// Update is called once per frame
