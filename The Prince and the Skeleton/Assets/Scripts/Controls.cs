@@ -14,6 +14,7 @@ public class Controls : MonoBehaviour {
 	float lastPositionY = 0f;
 	float fallingTime = 0f;
 	bool tripped = false;
+	public int state = 0;
 
 	public bool isFalling {
 		get {
@@ -150,6 +151,9 @@ public class Controls : MonoBehaviour {
 		if (col.gameObject.tag == "Collect") {
 			col.gameObject.active= false;
 			collect = true;
+			//getScores();
+			//saveScores();
+
 		}
 	}
 
@@ -167,4 +171,6 @@ public class Controls : MonoBehaviour {
 			Debug.Log ("Exited RockWall");
 		}
 	}
+	//void getScores() { state = PlayerPrefs.GetInt("collectState"); } 
+	//void saveScores() { PlayerPrefs.SetInt("collectState",state+1); } 
 }
