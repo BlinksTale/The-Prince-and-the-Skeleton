@@ -9,12 +9,12 @@ public class SoundImages
 }
 
 public class Cutscene : MonoBehaviour {
-
+	
 	public SoundImages[] list;
 	int position = 0;
 	AudioClip currentAudio = null;
 	AudioSource source;
-
+	
 	// Use this for initialization
 	void Start () {
 		foreach (Transform t in this.GetComponentsInChildren<Transform>()) {
@@ -34,7 +34,7 @@ public class Cutscene : MonoBehaviour {
 			NextPage();
 		}
 	}
-
+	
 	void NextPage() {
 		position++;
 		if (position < list.Length) {

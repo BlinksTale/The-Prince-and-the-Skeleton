@@ -8,6 +8,7 @@ public class SelectSacrifice : MonoBehaviour {
 	public bool allowChoice = true;
 	bool stopMovement = false;
 	GameObject sacrificeTracker;
+	public int levelIndex = -1; 
 
 	// Use this for initialization
 	void Start () {
@@ -42,7 +43,7 @@ public class SelectSacrifice : MonoBehaviour {
 				if ((currentOption == -1) && (Application.loadedLevelName == "Chapter 2 Choice")) {
 					c.sacrificedLeg = true;
 				}
-				Application.LoadLevel(Application.loadedLevel + 1);
+				Application.LoadLevel(levelIndex);
 			} else {
 //				stopMovement = true;
 			}

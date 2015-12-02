@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Arrow : MonoBehaviour {
-    bool direction = false;
+   bool direction = false;
 
 	void Update () {
         Vector3 pos =  GetComponent<Transform>().localPosition;
