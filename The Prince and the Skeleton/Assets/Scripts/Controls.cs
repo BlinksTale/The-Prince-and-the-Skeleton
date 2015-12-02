@@ -15,6 +15,9 @@ public class Controls : MonoBehaviour {
 	float fallingTime = 0f;
 	bool tripped = false;
 	public int state = 0;
+	public BoulderCollider boulderColliderLeft, boulderColliderRight;
+
+	Animator animator;
 
 	public bool isFalling {
 		get {
@@ -33,6 +36,7 @@ public class Controls : MonoBehaviour {
 			
 		}
 
+		animator = this.GetComponentInChildren<Animator>();
 		rigid = this.GetComponent<Rigidbody2D>();
 	}
 
@@ -74,9 +78,17 @@ public class Controls : MonoBehaviour {
 			// Walking
 			if (Input.GetKey(KeyCode.LeftArrow)) {
 				rigid.AddForce(new Vector2(-10f, 0f));
+				animator.SetBool("walking", true);
+				FlipAnimation(-1f);
 			}
 			if (Input.GetKey(KeyCode.RightArrow)) {
 				rigid.AddForce(new Vector2(10f, 0f));
+				animator.SetBool("walking", true);
+				FlipAnimation(1f);
+			}
+			// both true or both false? Stop.
+			if (!Input.GetKey(KeyCode.LeftArrow) == !Input.GetKey(KeyCode.RightArrow)) {
+				animator.SetBool("walking", false);
 			}
 
 			// Tripping
@@ -113,9 +125,15 @@ public class Controls : MonoBehaviour {
 				
 				if (Input.GetKey(KeyCode.UpArrow)) {
 					rigid.AddForce(new Vector2(0f, 10f));
+					animator.SetBool("vertical", true);
 				}
 				if (Input.GetKey(KeyCode.DownArrow)) {
 					rigid.AddForce(new Vector2(0f, -10f));
+					animator.SetBool("vertical", true);
+				}
+				// Again, if both true or both false, not moving vertically
+				if (Input.GetKey(KeyCode.DownArrow) == Input.GetKey(KeyCode.UpArrow)) {
+					animator.SetBool("vertical", false);
 				}
 			}
 
@@ -144,6 +162,16 @@ public class Controls : MonoBehaviour {
 
 		// Tracking to know when falling stops
 		lastPositionY = this.transform.position.y;
+
+		// Animation updates:
+		if (climbingWalls != animator.GetBool("climbing")) {
+			animator.SetBool("climbing", climbingWalls);
+		}
+
+		bool hasBoulder = (boulderColliderLeft.hasBoulder && animator.transform.localScale.x < 0) || (boulderColliderRight.hasBoulder && animator.transform.localScale.x > 0);
+		if (animator.GetBool("boulder") != hasBoulder) {
+			animator.SetBool("boulder", hasBoulder);
+		}
 	}
 
 	//collision detection for collectible items
@@ -162,6 +190,7 @@ public class Controls : MonoBehaviour {
 		if (c.gameObject.tag == "RockWall") {
 			rockWalls++;
 			Debug.Log ("Entered RockWall");
+//			FlipAnimation(1f);
 		}
 	}
 
@@ -169,6 +198,14 @@ public class Controls : MonoBehaviour {
 		if (c.gameObject.tag == "RockWall") {
 			rockWalls--;
 			Debug.Log ("Exited RockWall");
+		}
+	}
+
+	void FlipAnimation(float newDirection) {
+		Vector3 scale = animator.transform.localScale;
+		scale.x = Mathf.Abs(scale.x) * newDirection;
+		if (animator.transform.localScale != scale) {
+			animator.transform.localScale = scale;
 		}
 	}
 	//void getScores() { state = PlayerPrefs.GetInt("collectState"); } 
