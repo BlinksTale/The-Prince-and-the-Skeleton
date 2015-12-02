@@ -12,11 +12,18 @@ public class PrologueGameplay : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		foreach(GameObject g in tasks) {
-			g.GetComponent<PrologueTask>().gameplay = this;
-			g.SetActive(false);
+			ShowTask (g, false);
 		}
-		tasks[0].SetActive(true);
+		ShowTask(tasks[0], true);
 		text = this.GetComponent<TextMesh>();
+	}
+
+	void ShowTask(GameObject t, bool b) {
+		if (!t.GetComponent<PrologueTask>().visibleBefore) {
+			t.SetActive(b);
+		} else {
+			t.GetComponent<Collider2D>().enabled = b;
+		}
 	}
 	
 	// Update is called once per frame
@@ -27,7 +34,7 @@ public class PrologueGameplay : MonoBehaviour {
 	public void Progress() {
 		index++;
 		if (index < tasks.Length) {
-			tasks[index].SetActive(true);
+			ShowTask(tasks[index], true);
 			if (text != null) {
 				text.text = "Task " + (index + 1);
 			}
