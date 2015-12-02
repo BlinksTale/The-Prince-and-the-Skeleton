@@ -2,10 +2,12 @@
 using System.Collections;
 
 public class PrologueGameplay : MonoBehaviour {
-
+	
+	public int levelIndex=-1;
 	public GameObject[] tasks; // touch these in order to progress
 	int index = 0;
 	TextMesh text;
+
 
 	// Use this for initialization
 	void Start () {
@@ -30,7 +32,11 @@ public class PrologueGameplay : MonoBehaviour {
 				text.text = "Task " + (index + 1);
 			}
 		} else {
-			Application.LoadLevel(Application.loadedLevel + 1);
+			if (levelIndex == -1) {
+				Application.LoadLevel(Application.loadedLevel + 1);
+			} else {
+				Application.LoadLevel(levelIndex);
+			}
 		}
 	}
 }
