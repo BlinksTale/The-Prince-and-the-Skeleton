@@ -26,7 +26,9 @@ public class PrologueGameplay : MonoBehaviour {
 		index++;
 		if (index < tasks.Length) {
 			tasks[index].SetActive(true);
-			text.text = "Task " + (index + 1);
+			if (text != null) {
+				text.text = "Task " + (index + 1);
+			}
 		} else {
 			Application.LoadLevel(Application.loadedLevel + 1);
 		}
