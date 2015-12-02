@@ -7,7 +7,7 @@ public class AudioTriggers : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
         if(!call){
-            AudioSource audio = GetComponent<AudioSource>();
+            AudioSource audio = this.GetComponent<AudioSource>();
             audio.Play();
             call = true;
         }
