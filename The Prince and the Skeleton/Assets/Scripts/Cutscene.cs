@@ -14,12 +14,15 @@ public class Cutscene : MonoBehaviour {
 	int position = 0;
 	AudioClip currentAudio = null;
 	AudioSource source;
-	
+	//special case exception (hacky)
+	public bool epilogue = false;
 	// Use this for initialization
 	void Start () {
-		foreach (Transform t in this.GetComponentsInChildren<Transform>()) {
-			if (t != this.transform) {
-				t.gameObject.SetActive(false);
+		if(!epilogue){
+			foreach (Transform t in this.GetComponentsInChildren<Transform>()) {
+				if (t != this.transform) {
+					t.gameObject.SetActive(false);
+				}
 			}
 		}
 		source = this.GetComponent<AudioSource>();
