@@ -5,11 +5,15 @@ public class AudioDoor : MonoBehaviour {
     public int levelIndex = -1; 
     AudioClip currentAudio = null;
     AudioSource source;
+    bool call = false;
 
 
     void OnTriggerEnter2D (Collider2D c) {
-        source = this.GetComponent<AudioSource>();
-        source.Play();
+        if(!call){
+            source = this.GetComponent<AudioSource>();
+            source.Play();
+            call = true;
+        }
     }
     
     // Update is called once per frame
