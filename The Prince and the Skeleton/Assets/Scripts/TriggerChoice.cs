@@ -29,7 +29,7 @@ public class TriggerChoice : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!source.isPlaying || Input.GetKeyDown(KeyCode.Space)) {
+		if (!source.isPlaying || (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.LeftShift))) {
 			NextPage();
 		}
 	}

@@ -69,7 +69,7 @@ public class Controls : MonoBehaviour {
 		v.x = Mathf.Clamp(v.x,-2.5f,2.5f);
 		rigid.velocity = v;
 		//rigid.velocity = Vector2.ClampMagnitude(rigid.velocity, 2.5f);
-		if (Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.LeftShift)) {
 			Application.LoadLevel(Application.loadedLevel + 1);
 		}
 
