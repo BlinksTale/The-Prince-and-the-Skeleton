@@ -9,7 +9,7 @@ public class SoundImages
 }
 
 public class Cutscene : MonoBehaviour {
-	
+	public int levelIndex = -1; 
 	public SoundImages[] list;
 	int position = 0;
 	AudioClip currentAudio = null;
@@ -47,7 +47,12 @@ public class Cutscene : MonoBehaviour {
 			source.clip = list[position].sound;
 			source.Play();
 		} else {
-			Application.LoadLevel(Application.loadedLevel + 1);
+            // if(levelIndex == -1){
+            //     Application.LoadLevel(Application.loadedLevel + 1);
+            // }
+            // else {
+                Application.LoadLevel(levelIndex);
+          //  }
 		}
 	}
 }
