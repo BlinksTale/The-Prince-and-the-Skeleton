@@ -9,6 +9,7 @@ public class Credits : MonoBehaviour {
 	public float delay = 4f;
 	public bool loop = false;
 	public bool holdOnFinal = false;
+	public bool progress = false;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +20,9 @@ public class Credits : MonoBehaviour {
 	// Update is called once per frame
 	void TryNextCredits () {
 		if (index >= credits.Length) {
-			if (!loop) {
+			if (progress) {
+				Application.LoadLevel(Application.loadedLevel+1);
+			} else if (!loop) {
 				HideText();
 			} else {
 				index=1;
