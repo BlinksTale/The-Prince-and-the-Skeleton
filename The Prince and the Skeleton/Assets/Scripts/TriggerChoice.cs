@@ -43,7 +43,11 @@ public class TriggerChoice : MonoBehaviour {
 			source.clip = list[position].sound;
 			source.Play();
 		} else {
-			Application.LoadLevel(levelIndex);
+			if (levelIndex == -1) {
+				Application.LoadLevel(Application.loadedLevel + 1);
+			} else {
+				Application.LoadLevel(levelIndex);
+			}
 		}
 	}
 }
