@@ -4,7 +4,17 @@ using System.Collections;
 public class Arrow : MonoBehaviour {
    bool direction = false;
 
+	GameObject player;
+
+	void Start () {
+		player = GameObject.FindGameObjectWithTag("Player");
+	}
+
 	void Update () {
+		if (Mathf.Abs(this.transform.position.x - player.transform.position.x) < .5f) {
+			Destroy(this.gameObject);
+		}
+
         Vector3 pos =  GetComponent<Transform>().localPosition;
         
         if(direction){

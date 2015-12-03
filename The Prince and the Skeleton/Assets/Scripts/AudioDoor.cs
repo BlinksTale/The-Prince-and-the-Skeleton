@@ -21,8 +21,7 @@ public class AudioDoor : MonoBehaviour {
 		if (source != null && !source.isPlaying){
             if(levelString == ""){
                 Application.LoadLevel(Application.loadedLevel + 1);
-            }
-            else {
+            } else {
                 Application.LoadLevel(levelString);
             }
         }
