@@ -6,6 +6,7 @@ public class SacrificeTracker : MonoBehaviour {
 	public bool sacrificedArm = false;
 	public bool sacrificedLeg = false;
 	public static SacrificeTracker sacrificeTracker;
+	public bool isSacrificeTracker = false;
 
 	// Use this for initialization
 	void Start () {
@@ -13,11 +14,12 @@ public class SacrificeTracker : MonoBehaviour {
 	}
 
 	void OnEnable () {
-		if (sacrificeTracker != null) {
+		if (sacrificeTracker != null && !isSacrificeTracker) {
 			Destroy(this.gameObject);
 		} else {
 			DontDestroyOnLoad(this.gameObject);
 			sacrificeTracker = this;
+			isSacrificeTracker = true;
 		}
 	}
 	
