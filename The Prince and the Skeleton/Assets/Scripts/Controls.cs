@@ -36,8 +36,12 @@ public class Controls : MonoBehaviour {
 			
 		}
 
+		boulderColliderLeft = Instantiate(Resources.Load ("BoulderColliderLeft") as GameObject).GetComponent<BoulderCollider>();
+		boulderColliderRight = Instantiate(Resources.Load ("BoulderColliderRight") as GameObject).GetComponent<BoulderCollider>();
+
 		animator = this.GetComponentInChildren<Animator>();
 		rigid = this.GetComponent<Rigidbody2D>();
+
 	}
 
 	public void ForceFall() {

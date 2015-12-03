@@ -43,7 +43,11 @@ public class SelectSacrifice : MonoBehaviour {
 				if ((currentOption == -1) && (Application.loadedLevelName == "Chapter 2 Choice")) {
 					c.sacrificedLeg = true;
 				}
-				Application.LoadLevel(levelIndex);
+				if (levelIndex == -1) {
+					Application.LoadLevel(Application.loadedLevel+1);
+				} else {
+					Application.LoadLevel(levelIndex);
+				}
 			} else {
 //				stopMovement = true;
 			}
