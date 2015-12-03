@@ -2,24 +2,47 @@
 using System.Collections;
 
 public class Guardian : MonoBehaviour {
+	public float speed;
+	public float minimum;
+	public float maximum;
+	public bool xAxis;
+	public bool yAxis;
 
 	bool direction = false;
 	
 	void Update () {
 		Vector3 pos =  GetComponent<Transform>().localPosition;
-		
-		if(direction){
-			pos.y += 0.01f;
-			GetComponent<Transform>().localPosition = pos;
-			if(pos.y > 1.5f){
-				direction = false;
+		if(yAxis){
+			if(direction){
+				pos.y += speed;
+				GetComponent<Transform>().localPosition = pos;
+				if(pos.y > maximum){
+					direction = false;
+				}
+			}
+			else {
+				pos.y -= speed;
+				GetComponent<Transform>().localPosition = pos;
+				if(pos.y < minimum){
+					direction = true;
+				}
 			}
 		}
-		else {
-			pos.y -= 0.01f;
-			GetComponent<Transform>().localPosition = pos;
-			if(pos.y < -0.1f){
-				direction = true;
+
+		if(xAxis){
+			if(direction){
+				pos.x += speed;
+				GetComponent<Transform>().localPosition = pos;
+				if(pos.x > maximum){
+					direction = false;
+				}
+			}
+			else {
+				pos.x -= speed;
+				GetComponent<Transform>().localPosition = pos;
+				if(pos.x < minimum){
+					direction = true;
+				}
 			}
 		}
 	}
