@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class AudioDoor : MonoBehaviour {
-    public int levelIndex = -1; 
+    public string levelString = ""; 
     AudioClip currentAudio = null;
     AudioSource source;
     bool call = false;
@@ -19,11 +19,11 @@ public class AudioDoor : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 		if (source != null && !source.isPlaying){
-            if(levelIndex == -1){
+            if(levelString == ""){
                 Application.LoadLevel(Application.loadedLevel + 1);
             }
             else {
-                Application.LoadLevel(levelIndex);
+                Application.LoadLevel(levelString);
             }
         }
 
